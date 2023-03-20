@@ -14,11 +14,11 @@ server.listen(3000, () => {
 });
 
 io.on("connection", (socket) => {
-  io.emit("chat message", "User Connected");
+  io.emit("chat message", "User Connected");//User connected chat message
   socket.on("chat message", (msg) => {
     io.emit("chat message", msg);
   });
   socket.on("disconnect", () => {
-    io.emit("chat message", "User disconnected");
+    io.emit("chat message", "User disconnected");//User disconnected chat message
   });
 });
